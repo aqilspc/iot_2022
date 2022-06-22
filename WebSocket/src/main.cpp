@@ -32,13 +32,13 @@ void connect_server()
   {
     Serial.println("connected]");
 
+    if (isnan(h) || isnan(t) || isnan(f))
     Serial.println("[Sending a request]");
     //suhu 
      float h = dht.readHumidity();
      float t = dht.readTemperature();
      float f = dht.readTemperature(true);
 
-    if (isnan(h) || isnan(t) || isnan(f))
     {
        Serial.println("Failed to read from DHT sensor!");
        return;
